@@ -1,0 +1,44 @@
+.navbar{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	gap: 50px;
+}
+
+	.navbar-logo{
+		display: flex;
+		flex-direction: row;
+		margin-top: auto;
+		gap: 5px;
+	}
+
+		.navbar-logo-c{
+			display: flex;
+			flex-shrink: 0;
+		}
+
+		.navbar-logo-appuccino{
+			display: flex;
+			width: 320px;
+			height: 72px;
+
+			color: #6A492A;
+			font-family: Inter;
+			font-size: 54px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+	.navbar-icons{
+		display: flex;
+		margin-left: auto;
+		flex-shrink: 0;
+	}
+
+		.icon-comment, .icon-heart, .icon-home, .icon-profile{
+			display: flex;
+			padding: 10px;
+		}
+
+

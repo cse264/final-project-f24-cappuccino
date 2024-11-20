@@ -75,23 +75,25 @@ function handleCallbackResponse(response) {
   setUser(userObject);
   document.getElementById("signInDiv").hidden = true;
 
-  //On Success
-  //Alex Front End
+  // Send the JWT to the backend
   var xhr = new XMLHttpRequest();
   xhr.open('POST', `${backendUrl}/login`);
-  // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onload = function () {
     console.log("Signed in as: " + xhr.responseText);
+    if (xhr.status === 200) {
+      // Navigate to AllIdeas page upon successful login
+      navigate("/allideas");
+    } else {
+      console.error("Login failed: ", xhr.statusText);
+    }
   };
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        // Handle success here if needed
         console.log("Request successful");
       } else {
-        // Handle error here if needed
         console.log("Request failed");
       }
     }
@@ -99,6 +101,7 @@ function handleCallbackResponse(response) {
 
   xhr.send(JSON.stringify({ jwtToken: jwt_string }));
 }
+
 
 
 

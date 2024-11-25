@@ -226,7 +226,7 @@ const YourIdeasScreen = ({ ideas, title, handleDelete, handleSubmit, incrementLi
           {/* <h2>{title}</h2> */}
             <button onClick={handleSubmit}>Add Idea</button>
         </div>
-        <FileUploadButton />
+        {/* <FileUploadButton /> */}
       </div>
       <div className="ideas">
           {ideas?.map(renderIdea)}

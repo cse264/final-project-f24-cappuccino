@@ -54,6 +54,7 @@
 .add-idea-button:hover{
 	box-shadow: 1px 3px 5px rgb(94, 55, 4);
 }
+/* 
 .file-upload-button{
 	width: 220px;
 	height: 72px;
@@ -75,7 +76,7 @@
 
 	margin-left: 20px;
 	padding: 5px;
-}
+} */
 
 .idea-preview {
 	width: 80%;

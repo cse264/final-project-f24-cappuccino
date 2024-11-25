@@ -37,18 +37,19 @@ const Navbar = (props) => {
 
       <div className="navbar-icons">
 
-        <div className="icon-comment">
-          {!!props?.commenticon ? (
+        <div className="icon-weather">
+          {!!props?.weathericon ? (
             <Img
               // className="common-pointer h-[72px] md:ml-[0] ml-[642px] md:mt-0 mt-[3px] w-[72px]"
               // className="icon-comment"
-              alt="iconamooncommen"
-              src={props?.commenticon}
+              alt="pig"
+              src={props?.weathericon}
               style={{ cursor: 'pointer' }}
-              onClick={() => navigate("/yourcomments")}
+              onClick={() => navigate("/weather")}
             />
           ) : null}
         </div>
+        
 
         <div className="icon-heart">
           {!!props?.hearticon ? (

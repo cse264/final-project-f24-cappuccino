@@ -220,7 +220,7 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
     <div className="all-ideas-screen">
       <div className="header">
         <h1>All Ideas:</h1>
-        <FileUploadButton />
+        {/* <FileUploadButton /> */}
         <div className="add-idea-button">
             <button onClick={handleSubmit}>Add Idea</button>
         </div> 

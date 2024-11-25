@@ -14,26 +14,8 @@ const AllIdeasPage = () => {
   const [ideas, setIdeas] = useState([]);
   const [editingIdea, setEditingIdea] = useState(null);
 
-/*** Caching
- * 
- * app.get('/data', (req, res) => {
-  const responseData = /* Your data */;
-//     const maxAge = 3600; // Cache for 1 hour
-  //res.setHeader('Cache-Control', `public, max-age=${maxAge}`);
- // res.json(responseData);
-//});
-/// app.get('/data', (req, res) => {
-///  const responseData = /* Your data */;
-///  const lastModified = /* Last modified date of your resource */;
 
-  /// res.setHeader('Last-Modified', lastModified);
 
-///  if (req.headers['if-modified-since'] === lastModified) {    //conditionals, checking to see if the data has been modified
-///    res.status(304).send(); // Not Modified
-///  } else {
-///    res.json(responseData);
-///  }
-///});
 
 
 
@@ -342,6 +324,7 @@ const handleSubmit = () => {
     }
   }
 };
+
 const FileUploadButton = () => {
   const fileInputRef = useRef(null);
   const [selectedFileName, setSelectedFileName] = useState('');
@@ -518,12 +501,13 @@ useEffect(() => {
     <>
       <div className="bg-gray-300 flex flex-col font-inter gap-[34px] items-center justify-start mx-auto p-[34px] sm:px-5 w-full">
         <Navbar
-          // className="flex md:flex-col flex-row md:gap-5 items-start justify-end max-w-[1419px] mx-auto pb-[7px] pl-[7px] md:px-5 w-full"
-          cicon="images/img_icon-Clogo.svg"
-          commenticon="images/img_icon-comment.svg"
-          hearticon="images/img_icon-heart.svg"
-          homeicon="images/img_icon-home.svg"
-          profileicon="images/img_icon-profile.svg"
+            // className="flex md:flex-col flex-row md:gap-5 items-start justify-end max-w-[1419px] mx-auto pb-[7px] pl-[7px] md:px-5 w-full"
+            cicon="images/img_icon-Clogo.svg"
+            //   commenticon="images/img_icon-comment.svg"
+            weathericon="images/img_icon-weather.svg"
+            hearticon="images/img_icon-heart.svg"
+            homeicon="images/img_icon-home.svg"
+            profileicon="images/img_icon-profile.svg"
         />
   
         <IdeaList

@@ -97,130 +97,18 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
       </div>
     );
   };
-  const FileUploadButton = () => {
-    const fileInputRef = useRef(null);
-    const [selectedFileName, setSelectedFileName] = useState('');
-    const [selectedLink, setSelectedLink] = useState('');
-    const [showFileInput, setShowFileInput] = useState(false);
-    const [showLinkInput, setShowLinkInput] = useState(false);
-    const [showPrompt, setShowPrompt] = useState(false);
-    const [showOriginalButton, setShowOriginalButton] = useState(true);
-  
 
-  const handleFileInputChange = () => {
-    const selectedFile = fileInputRef.current.files[0];
-    if(selectedFile){
-      setSelectedFileName(selectedFile.name);
-      setShowOriginalButton(false);
-      //console.log(fileInputRef.current.files[0]);
-      const reader = new FileReader();
-      reader.onload = () => {
-      const base64String = reader.result.split(',')[1];
-      console.log("File as a base64 string: ", base64String);
-    };
-    reader.onerror = (error) => {
-      console.error("Error reading the file: ", error);};
-    reader.readAsDataURL(selectedFile);
-    }
-  };
-  const handleLinkInputChange = (e) => {
-    setSelectedLink(e.target.value);
-    setShowOriginalButton(false);
-  };
-  const handleLinkSubmit = () => {
-    console.log("Entered Link: ", selectedLink);
-    const base64EncodedLink = btoa(selectedLink);
-    console.log("Base 64 Encoded Link: ", base64EncodedLink);
-    setShowOriginalButton(false);
-    //handleSubmitL(base64EncodedLink);
-  }
-  const handleButtonClick = () => {
-    const userInput = prompt("Upload File (F) or Enter Link (L)");
-    if (userInput && userInput.toLowerCase() === 'f'){
-      setShowFileInput(true);
-      setShowLinkInput(false);
-      setSelectedFileName('');
-      setSelectedLink('');
-      setShowPrompt(false);
-      setShowOriginalButton(false);
-    }
-    else if(userInput && userInput.toLowerCase() === 'l'){
-      setShowLinkInput(true);
-      setShowFileInput(false);
-      setSelectedFileName('');
-      setSelectedLink('');
-      setShowPrompt(true);
-      setShowOriginalButton(false);
-    }
-  };
 
 
   
 
   
-  return (
-    <div>
-      {showOriginalButton && (
-      <div className="file-upload-button">
-        <button onClick={handleButtonClick}>
-          File/Link
-          </button>
-          </div>
-      )}
-        {showFileInput && (
-          <input
-          type="file"
-          ref = {fileInputRef}
-          onChange={handleFileInputChange}
-          className="file-input-style"
-          />
-        )}
-          {showPrompt && (
-            <div>
-            <input
-            type = "text"
-            value = {selectedLink}
-            onChange = {handleLinkInputChange}
-            placeholder = "Enter Link"
-        />
-        <div className = "submit-link-button">
-        <button onClick={handleLinkSubmit}>Submit Link</button>
-        </div>
-        </div>
-        )}
-      {selectedFileName && showFileInput && (
-        <div>
-        </div>
-      )}
-      {selectedLink && showLinkInput && (
-        <div>
-        <p style={{ 
-          maxWidth: '200px',
-          backgroundColor: '#f0f0f0', 
-          padding: '5px 10px',
-          borderRadius: '5px', 
-          marginTop: '10px',
-          color: '#000',
-          fontSize: '12px',
-          whiteSpace: 'nowrap',
-          maxWidth: '200px',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          marginLeft: '10px',
-        }}>
-          Selected Link: {selectedLink}
-        </p>
-        </div>
-      )}
-    </div>
-  );
-};
+
 
   return (
     <div className="all-ideas-screen">
       <div className="header">
         <h1>All Ideas:</h1>
-        <FileUploadButton />
         <div className="add-idea-button">
             <button onClick={handleSubmit}>Add Idea</button>
         </div> 

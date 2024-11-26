@@ -94,25 +94,3 @@
 	margin-left: auto;
 	padding: 5px; 
 }
-.link-submit-button{
-	border-radius: 10px;
-	background: #6A492A;;
-	padding: 10px;
-
-	width: 150px;
-	height: 72px;
-
-	display: flex;
-	justify-content: center;
-	flex-shrink: 0;
-
-
-	color: #FFF;
-	font-family: Inter;
-	font-size: 35px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-
-	margin-left: auto;
-	padding: 5px; }

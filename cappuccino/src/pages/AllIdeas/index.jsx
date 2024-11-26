@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
 import IdeaList from "components/IdeaList";
-//import FileUploadButton from "components/FileUploadButton";
 
 import { Button, Img, List, Text } from "components";
 import Navbar from "components/Navbar";
@@ -14,26 +13,8 @@ const AllIdeasPage = () => {
   const [ideas, setIdeas] = useState([]);
   const [editingIdea, setEditingIdea] = useState(null);
 
-/*** Caching
- * 
- * app.get('/data', (req, res) => {
-  const responseData = /* Your data */;
-//     const maxAge = 3600; // Cache for 1 hour
-  //res.setHeader('Cache-Control', `public, max-age=${maxAge}`);
- // res.json(responseData);
-//});
-/// app.get('/data', (req, res) => {
-///  const responseData = /* Your data */;
-///  const lastModified = /* Last modified date of your resource */;
 
-  /// res.setHeader('Last-Modified', lastModified);
 
-///  if (req.headers['if-modified-since'] === lastModified) {    //conditionals, checking to see if the data has been modified
-///    res.status(304).send(); // Not Modified
-///  } else {
-///    res.json(responseData);
-///  }
-///});
 
 
 
@@ -342,117 +323,7 @@ const handleSubmit = () => {
     }
   }
 };
-const FileUploadButton = () => {
-  const fileInputRef = useRef(null);
-  const [selectedFileName, setSelectedFileName] = useState('');
-  const [selectedLink, setSelectedLink] = useState('');
-  const [showFileInput, setShowFileInput] = useState(false);
-  const [showLinkInput, setShowLinkInput] = useState(false);
-  const [showPrompt, setShowPrompt] = useState(false);
-  const [showOriginalButton, setShowOriginalButton] = useState(true);
-const handleFileInputChange = () => {
-  const selectedFile = fileInputRef.current.files[0];
-  if(selectedFile){
-    setSelectedFileName(selectedFile.name);
-    setShowOriginalButton(false);
-    //console.log(fileInputRef.current.files[0]);
-    const reader = new FileReader();
-    reader.onload = () => {
-    const base64String = reader.result.split(',')[1];
-    console.log("File as a base64 string: ", base64String);
-  };
-  reader.onerror = (error) => {
-    console.error("Error reading the file: ", error);};
-  reader.readAsDataURL(selectedFile);
-  }
-};
-const handleLinkInputChange = (e) => {
-  setSelectedLink(e.target.value);
-  setShowOriginalButton(false);
-};
-const handleLinkSubmit = () => {
-  console.log("Entered Link: ", selectedLink);
-  const base64EncodedLink = btoa(selectedLink);
-  console.log("Base 64 Encoded Link: ", base64EncodedLink);
-  setShowOriginalButton(false);
-  handleSubmitL(base64EncodedLink);
-}
-const handleButtonClick = () => {
-  const userInput = prompt("Upload File (F) or Enter Link (L)");
-  if (userInput && userInput.toLowerCase() === 'f'){
-    setShowFileInput(true);
-    setShowLinkInput(false);
-    setSelectedFileName('');
-    setSelectedLink('');
-    setShowPrompt(false);
-    setShowOriginalButton(false);
-  }
-  else if(userInput && userInput.toLowerCase() === 'l'){
-    setShowLinkInput(true);
-    setShowFileInput(false);
-    setSelectedFileName('');
-    setSelectedLink('');
-    setShowPrompt(true);
-    setShowOriginalButton(false);
-  }
-};
-return (
-  <div>
-    {showOriginalButton && (
-    <div className="file-upload-button">
-      <button onClick={handleButtonClick}>
-        File/Link
-        </button>
-        </div>
-    )}
-      {showFileInput && (
-        <input
-        type="file"
-        ref = {fileInputRef}
-        onChange={handleFileInputChange}
-        className="file-input-style"
-        />
-      )}
-        {showPrompt && (
-          <div>
-          <input
-          type = "text"
-          value = {selectedLink}
-          onChange = {handleLinkInputChange}
-          placeholder = "Enter Link"
-      />
-      <div className = "submit-link-button">
-      <button onClick={handleLinkSubmit}>Submit Link</button>
-      </div>
-      </div>
-      )}
-    {selectedFileName && showFileInput && (
-      <div>
-      </div>
-    )}
-    {selectedLink && showLinkInput && (
-      <div>
-      <p style={{ 
-        maxWidth: '200px',
-        backgroundColor: '#f0f0f0', 
-        padding: '5px 10px',
-        borderRadius: '5px', 
-        marginTop: '10px',
-        color: '#000',
-        fontSize: '12px',
-        whiteSpace: 'nowrap',
-        maxWidth: '200px',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        marginLeft: '10px',
-      }}>
-        Selected Link: {selectedLink}
-      </p>
-      </div>
-    )}
-  </div>
-);
-};
+
 
 /**
  * Handles the submission of a form for creating a new idea.
@@ -518,12 +389,13 @@ useEffect(() => {
     <>
       <div className="bg-gray-300 flex flex-col font-inter gap-[34px] items-center justify-start mx-auto p-[34px] sm:px-5 w-full">
         <Navbar
-          // className="flex md:flex-col flex-row md:gap-5 items-start justify-end max-w-[1419px] mx-auto pb-[7px] pl-[7px] md:px-5 w-full"
-          cicon="images/img_icon-Clogo.svg"
-          commenticon="images/img_icon-comment.svg"
-          hearticon="images/img_icon-heart.svg"
-          homeicon="images/img_icon-home.svg"
-          profileicon="images/img_icon-profile.svg"
+            // className="flex md:flex-col flex-row md:gap-5 items-start justify-end max-w-[1419px] mx-auto pb-[7px] pl-[7px] md:px-5 w-full"
+            cicon="images/img_icon-Clogo.svg"
+            //   commenticon="images/img_icon-comment.svg"
+            weathericon="images/img_icon-weather.svg"
+            hearticon="images/img_icon-heart.svg"
+            homeicon="images/img_icon-home.svg"
+            profileicon="images/img_icon-profile.svg"
         />
   
         <IdeaList

@@ -54,28 +54,7 @@
 .add-idea-button:hover{
 	box-shadow: 1px 3px 5px rgb(94, 55, 4);
 }
-.file-upload-button{
-	width: 220px;
-	height: 72px;
 
-	display: flex;
-	justify-content: center;
-	flex-shrink: 0;
-
-	border-radius: 10px;
-	background: #6A492A;
-
-	color: #FFF;
-	text-align: center;
-	font-family: Inter;
-	font-size: 35px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-
-	margin-left: 20px;
-	padding: 5px;
-}
 
 .idea-preview {
 	width: 80%;
@@ -150,19 +129,6 @@
 	/* padding-top: 20px; */
 }
 
-.like-count p{
-	display: flex;
-	font-size: 32px;
-	width: 75px;
-	justify-content: right;
-	margin-left: 0px;
-}
-
-.like-buttons{
-	display: flex;
-	flex-direction: row;
-	gap: 20px;
-}
 
 .edit-field{
 	display: flex;
@@ -186,33 +152,4 @@
 
 .edit-button:hover, .delete-button:hover, .idea-preview:hover {
 	box-shadow: 1px 3px 5px rgb(94, 55, 4);
-}
-.selectedFileName{
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	margin-top: 10px;
-	color: #000;
-}
-.submit-link-button{
-	display: flex;
-	border-radius: 10px;
-	background: #6A492A;
-	font-family: Inter;
-	font-size: 25px;
-	font-style: normal;
-	text-align: center;
-	color: #FFF;
-	margin-left: auto;
-	padding: 10px;
-	margin-top: 10px;
-	cursor: pointer;
-}
-.file-upload-button:hover{
-	box-shadow: 1px 3px 5px rgb(94, 55, 4);
-}
-.file-input-style{
-	font-size: 16px;
-	font-family: Inter;
-	text-align: center;
 }

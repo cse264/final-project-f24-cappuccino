@@ -11,6 +11,7 @@
 	margin-bottom: 80px;
 }
 
+
 .profile-info{
 	display: flex;
 	flex-direction: row;
@@ -18,6 +19,7 @@
 
 	gap: 100px;
 }
+
 
 .header{
 	width: 100%;
@@ -38,29 +40,6 @@
 	padding-bottom: 120px;
 }
 
-.profile-edit-button{
-	border-radius: 10px;
-	background: #979797;
-	padding: 10px;
-
-	width: 150px;
-	height: 72px;
-
-	display: flex;
-	justify-content: center;
-	flex-shrink: 0;
-
-
-	color: #FFF;
-	font-family: Inter;
-	font-size: 35px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-
-	margin-left: auto;
-	padding: 5px; 
-}
 
 .profile-user-info{
 	display: flex;
@@ -79,6 +58,7 @@
 	margin-left: 55px;
 }
 
+
 .profile-username, .profile-email{
 	width: 100%;
 	display: flex;
@@ -86,6 +66,7 @@
 	padding: 25px;
 	
 }
+
 
 .profile-bubbles{
 	width: 300px;
@@ -110,63 +91,6 @@
 	line-height: normal;
 }
 
-.profile-toggles{
-	display: flex;
-	flex-direction: column;
-
-	width: 100%;
-	height: 100%;
-
-	color: #000;
-	font-family: Inter;
-	font-size: 20px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-
-	margin-top: 5px;
-
-	gap: 50px;
-
-	/* padding: 25px; */
-}
-
-.profile-toggles h1{
-	font-size: 35px;
-}
-
-.profile-button-group{
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-
-	justify-content: center;
-	text-align: center;
-	padding: 10px;
-	margin-top: -5px;
-	margin-left: -40px;
-	gap: 25px;
-}
-
-.profile-gender {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	padding: 10px;
-	gap: 10px;
-}
-
-.profile-buttons{
-	display: flex;
-	flex-direction: row;
-
-	width: 100px;
-	justify-content: center;
-	padding: 15px;
-
-	color: #FFF;
-	border-radius: 10px;
-}
 
 
 .profile-note{
@@ -174,7 +98,7 @@
 	flex-direction: column;
 
 	width: 100%;
-	padding: 80px;
+	padding: 40px;
 	padding-top: 40px;
 	
 	color: #000;
@@ -183,46 +107,4 @@
 	font-style: normal;
 	font-weight: 700;
 	line-height: normal;
-}
-
-.profile-note-bubble{
-	display: flex;
-
-	border-radius: 10px;
-	background: #D9D9D9;
-
-	margin-top: 15px;
-	padding: 50px;
-}
-
-.button-footer{
-	display: flex;
-
-	width: 100%;
-	justify-content: center;
-	padding: 80px;
-	padding-top: 0px;
-}
-
-.profile-update-button{
-	border-radius: 10px;
-	background: #6A492A;
-	padding: 10px;
-
-	width: 150px;
-	height: 72px;
-
-	display: flex;
-	justify-content: center;
-	flex-shrink: 0;
-
-
-	color: #FFF;
-	font-family: Inter;
-	font-size: 35px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-
-	padding: 5px; 
 }

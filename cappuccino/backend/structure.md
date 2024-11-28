@@ -13,3 +13,15 @@
     - posts.js: Routes for CRUD operations on posts
   - .env: Environment variables file
   - server.js: The main entry point of the backend application, where we set up Express, middleware, and routes
+
+# Dependencies Used #
+
+- express: Web framework for building the server
+- sequelize: ORM for database interaction
+- pg: PostgreSQL driver
+- cors: Middleware to handle cross origin resource sharing
+- body-parser: Middleware to parse incoming request bodies
+- jsonwebtoke: For JWT authentication
+- bcrypt: For password hashing
+- dotenv: To manage environment variables
+

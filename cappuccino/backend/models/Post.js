@@ -1,7 +1,6 @@
 // models/Post.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const User = require('./User');
 
 const Post = sequelize.define(
   'Post',
@@ -26,10 +25,6 @@ const Post = sequelize.define(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: User,
-        key: 'id',
-      },
     },
   },
   {
@@ -37,9 +32,5 @@ const Post = sequelize.define(
     timestamps: false, 
   }
 );
-
-// Define associations
-Post.belongsTo(User, { foreignKey: 'user_id' });
-User.hasMany(Post, { foreignKey: 'user_id' });
 
 module.exports = Post;

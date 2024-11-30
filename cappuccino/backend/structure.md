@@ -25,3 +25,15 @@
 - bcrypt: For password hashing
 - dotenv: To manage environment variables
 
+# For Starting the Backend #
+
+1. cd into the backend folder
+2. open a terminal
+3. type 'node server.js'
+4. ensure you get the following message:
+  1. Sever is running on port 5001
+  2. Database synced succesfully
+5. Open up postman or a browser
+6. access http://localhost:5001/
+  1. You should get a message "Welcome to the Social Media API!"
+

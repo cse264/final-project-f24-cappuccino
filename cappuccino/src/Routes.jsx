@@ -19,7 +19,7 @@ const AppRoutes = () => {
         {/* Define all your routes */}
         <Route path="/weather" element={<Weather />} />
         <Route path="/yourideas" element={<YourIdeas />} />
-        <Route path="/allideas" element={<AllIdeas />} />
+        <Route path="/posts" element={<AllIdeas />} />
         <Route path="/addidea" element={<AddIdea />} />
         <Route path="/profile" element={<Profile />} />
         {/* Add a catch-all for undefined routes */}

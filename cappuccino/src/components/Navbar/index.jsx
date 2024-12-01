@@ -42,7 +42,7 @@ const Navbar = (props) => {
             <Img
               // className="common-pointer h-[72px] md:ml-[0] ml-[642px] md:mt-0 mt-[3px] w-[72px]"
               // className="icon-comment"
-              alt="pig"
+              alt="weather"
               src={props?.weathericon}
               style={{ cursor: 'pointer' }}
               onClick={() => navigate("/weather")}

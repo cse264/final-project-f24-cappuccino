@@ -6,6 +6,7 @@ import Weather from "./pages/Weather";
 import YourIdeas from "./pages/YourIdeas";
 import AllIdeas from "./pages/AllIdeas";
 import Profile from "./pages/Profile";
+import AboutUs from "./pages/AboutUs";
 // Import other components as needed
 
 const AppRoutes = () => {
@@ -21,6 +22,7 @@ const AppRoutes = () => {
         <Route path="/posts" element={<AllIdeas />} />
         <Route path="/addidea" element={<AddIdea />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/aboutus" element={<AboutUs />} />
         {/* Add a catch-all for undefined routes */}
         <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>

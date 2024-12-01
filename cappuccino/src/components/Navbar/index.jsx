@@ -16,7 +16,7 @@ const Navbar = (props) => {
           <Img 
             alt="logo"
             src={props?.cicon}
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/aboutus")}
             style={{ cursor: 'pointer' }} // Change cursor to pointer
           />
         ) : null}

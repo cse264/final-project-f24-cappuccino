@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "components/Navbar";
-import IdeaList from "components/IdeaList";
+import MyIdeaList from "components/MyIdeaList";
 
 
 const backendUrl = "http://localhost:5001";
@@ -14,8 +14,7 @@ const YourIdeasPage = () => {
         // Retrieve the username from localStorage
         const storedUsername = localStorage.getItem('username');
         setUsername(storedUsername);
-        console.log(storedUsername);
-      
+        
         const fetchIdeas = async () => {
           try {
             const response = await fetch(`http://localhost:5001/posts/user/${storedUsername}`, {
@@ -39,6 +38,8 @@ const YourIdeasPage = () => {
         fetchIdeas();
       }, []);
 
+      
+
   
   return (
     <div className="bg-gray-300 flex flex-col font-inter gap-[34px] items-center justify-start mx-auto p-[34px] sm:px-5 w-full">
@@ -50,7 +51,7 @@ const YourIdeasPage = () => {
             profileicon="images/img_icon-profile.svg"
         />
       
-        <IdeaList
+        <MyIdeaList
             title="Your Ideas"
             ideas={ideas}
             // handleDelete={handleDelete}

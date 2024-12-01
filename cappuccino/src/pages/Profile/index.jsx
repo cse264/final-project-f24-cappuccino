@@ -8,6 +8,20 @@ import "./index.css";
 const ProfilePage = () => {
   const navigate = useNavigate();
 
+  const username = localStorage.getItem('username');
+
+  
+  let status = "normal user"; // Use let for reassignment
+
+  const adminUsers = ["alex", "jordan", "henry", "harry", "earl"]; // List of admin usernames
+  
+  if (adminUsers.includes(username)) {
+    status = "admin"; // Reassign status if the username is in the admin list
+  }
+
+  
+  
+
   return (
     <>
     <div className="bg-gray-300 flex flex-col font-inter gap-[34px] items-center justify-start mx-auto p-[34px] sm:px-5 w-full">
@@ -25,6 +39,9 @@ const ProfilePage = () => {
       <div className="profile-screen">
         <div className="header">
           <h1>Profile:</h1>
+          <div className="sign-out-button">
+            <button onClick={() => navigate("/")}>Sign Out</button>
+          </div>
         </div>
 
         <div className=" profile-info">
@@ -33,18 +50,20 @@ const ProfilePage = () => {
             <div className="profile-username">
               <h1>Username:</h1>
               <div className="profile-bubbles">
-                <h2>@aeb225</h2>
+                <h2>{username}</h2>
               </div>
 
             </div>
             <div className="profile-email">
-              <h1>Email:</h1>
+              <h1>Status:</h1>
               <div className="profile-bubbles">
-                <h2>aeb225@lehigh.edu</h2>
+                <h2>{status}</h2>
               </div>
 
             </div>
           </div> {/* PROFILE user info */}
+
+          
 
          
         </div> {/* PROFILE Info */}

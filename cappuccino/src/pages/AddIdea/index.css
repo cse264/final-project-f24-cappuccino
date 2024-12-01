@@ -1,0 +1,128 @@
+.login-screen{
+	width: 70%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+
+	border-radius: 20px;
+	background: #FFF;
+	margin-bottom: 80px;
+	margin-top: 72px;
+}
+
+.login-elements{
+    width: 100%;
+
+    display: flex;
+	flex-direction: column;
+}
+
+.login-header{
+	width: 100%;
+	height: 104px;
+	
+	display: flex;
+	flex-direction: row;
+
+	color: #000;
+	font-family: Inter;
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	align-content: center;
+
+	padding: 80px;
+	/* padding-bottom: 120px; */
+}
+
+.message-entry{
+    width: 90%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: left; /* Center items horizontally */
+    
+    color: #000;
+    font-family: Inter;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+    margin-left: 7%; 
+    padding-top: 3%;
+    padding-bottom: 0px;
+}
+
+.login-footer{
+    padding-bottom: 0px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.login-switch{
+    width: 100%; 
+    
+    display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+    padding-bottom: 25px;
+}
+
+.signed-in{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	
+	padding: 100px;
+	/* border: solid; */
+
+}
+
+.message-credentials{
+	display: flex;
+	justify-content: center;
+	flex-shrink: 0;
+
+	color: #6A492A;
+	text-align: center;
+	font-family: Inter;
+	font-size: 35px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+
+	padding: 100px;
+    margin:left;
+}
+
+
+.create-post-button{
+	width: 125px;
+	height: 50px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-shrink: 0;
+
+	border-radius: 10px;
+	background: #6A492A;
+
+	color: #FFF;
+	text-align: center;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+
+	margin: auto;
+	padding: 5px;
+}

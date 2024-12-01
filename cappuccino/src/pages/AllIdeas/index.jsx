@@ -30,15 +30,16 @@ const AllIdeasPage = () => {
       }
     };
 
+    
+
     fetchIdeas();
   }, []);
 
+  
   return (
     <div className="bg-gray-300 flex flex-col font-inter gap-[34px] items-center justify-start mx-auto p-[34px] sm:px-5 w-full">
         <Navbar
-            // className="flex md:flex-col flex-row md:gap-5 items-start justify-end max-w-[1419px] mx-auto pb-[7px] pl-[7px] md:px-5 w-full"
             cicon="images/img_icon-Clogo.svg"
-            //   commenticon="images/img_icon-comment.svg"
             weathericon="images/img_icon-weather.svg"
             hearticon="images/img_icon-heart.svg"
             homeicon="images/img_icon-home.svg"
@@ -72,6 +73,4 @@ const AllIdeasPage = () => {
 };
 
 export default AllIdeasPage;
-
-
 

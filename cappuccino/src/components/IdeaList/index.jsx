@@ -2,11 +2,16 @@ import React, { useState, useRef } from 'react';
 import { Img, Text } from "components";
 import "./index.css";
 import { useNavigate } from "react-router-dom";
+// const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, decrementLikes, editIdea }) => {
+
 const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, decrementLikes, editIdea }) => {
+
 
   const [editedTitle, setEditedTitle] = useState('');
   const [editMode, setEditMode] = useState(null);
   const navigate = useNavigate();
+  const [error, setError] = useState(null);
+
 
   const handleEdit = (idea) => {
     // Set the edited title in the state
@@ -114,7 +119,29 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
         </div> 
       </div>
       <div className="ideas">
-          {ideas?.map(renderIdea)}
+          {/* {ideas?.map(renderIdea)} */}
+          
+          
+          {error ? (
+            <p style={{ color: 'red' }}>Error fetching ideas: {error.message}</p>
+            ) : (
+                ideas.map((idea) => (
+                    <div className='idea-preview'>
+                <div key={idea.id} className="idea">
+                    <div key={idea.id} className="idea-content">
+                    <div className='message-side'>
+                    <h1>{idea.title}</h1>
+                    <h2>{idea.body}</h2>
+                    </div>
+                    </div>
+                    <div className='username'>@ {idea.User?.username || 'Unknown'}</div>
+                
+                </div>
+                </div>
+                
+                ))
+            )}
+      
         </div>
     </div>
   );
@@ -122,4 +149,18 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
 };
 
 export default IdeaList;
+
+{/* <h1>All Ideas</h1>
+      {error ? (
+        <p style={{ color: 'red' }}>Error fetching ideas: {error.message}</p>
+      ) : (
+        ideas.map((idea) => (
+          <div key={idea.id} className="idea">
+            <h2>{idea.title}</h2>
+            <p>{idea.body}</p>
+            <small>By: {idea.User?.username || 'Unknown'}</small>
+          </div>
+        ))
+      )} */}
+ 
 

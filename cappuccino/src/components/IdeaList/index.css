@@ -52,6 +52,13 @@
 	padding: 5px;
 }
 
+.idea{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
 .idea-preview {
 	width: 80%;
 	max-width: 1000px;
@@ -70,11 +77,37 @@
 .idea-preview h1{
 	color: #000;
 	font-family: Inter;
-	font-size: 40px;
+	font-size: 30px;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 500;
+	line-height: normal;
+
+    padding-bottom: 5px;
+}
+
+.idea-preview h2{
+	color: #000;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 300;
 	line-height: normal;
 }
+
+.username{
+    width: 100%; 
+	color: #3f3a3a;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+
+    margin-right: auto;
+    text-align: right;
+    padding-top: 5px;
+}
+
 
 .idea-content{
 	display: flex;
@@ -90,7 +123,6 @@
 
 .message{
 	display: flex;
-	
 }
 
 .update-buttons{

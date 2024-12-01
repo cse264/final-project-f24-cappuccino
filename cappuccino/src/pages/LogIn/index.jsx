@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import "./index.css";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Navbar from "components/Navbar";
 
 const AuthForm = () => {
+    const navigate = useNavigate();
   const [isSignup, setIsSignup] = useState(false); // Toggle between signup and login
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -34,6 +36,8 @@ const AuthForm = () => {
         } else {
           setMessage('Login successful!');
           localStorage.setItem('token', data.token); // Save token for future use
+          navigate('/posts'); // Navigate to /posts
+          
         }
       } else {
         setMessage(data.message || (isSignup ? 'Signup failed' : 'Login failed'));

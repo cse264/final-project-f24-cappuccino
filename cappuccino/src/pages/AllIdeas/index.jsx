@@ -47,7 +47,7 @@ const AllIdeasPage = () => {
         />
       
         <IdeaList
-            heading="All Ideas"
+            title="All Ideas"
             ideas={ideas}
             // handleDelete={handleDelete}
             // handleSubmit={handleSubmit}
@@ -55,19 +55,6 @@ const AllIdeasPage = () => {
             // incrementLikes={incrementLikes}
             // decrementLikes={decrementLikes}
         />  
-
-        {/* <h1>All Ideas</h1>
-      {error ? (
-        <p style={{ color: 'red' }}>Error fetching ideas: {error.message}</p>
-      ) : (
-        ideas.map((idea) => (
-          <div key={idea.id} className="idea">
-            <h2>{idea.title}</h2>
-            <p>{idea.body}</p>
-            <small>By: {idea.User?.username || 'Unknown'}</small>
-          </div>
-        ))
-      )} */}    
     </div>
   );
 };

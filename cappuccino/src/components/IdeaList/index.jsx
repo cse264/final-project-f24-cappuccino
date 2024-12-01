@@ -12,6 +12,9 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
+  const handleAddIdeaClick = () => {
+    navigate('/addidea'); // Navigate to the "Add Idea" page
+  };
 
   const handleEdit = (idea) => {
     // Set the edited title in the state
@@ -113,9 +116,9 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
   return (
     <div className="all-ideas-screen">
       <div className="header">
-        <h1>All Ideas:</h1>
+        <h1>{title}</h1>
         <div className="add-idea-button">
-            <button onClick={handleSubmit}>Add Idea</button>
+        <button onClick={handleAddIdeaClick}>Add Idea</button>
         </div> 
       </div>
       <div className="ideas">
@@ -134,7 +137,7 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
                     <h2>{idea.body}</h2>
                     </div>
                     </div>
-                    <div className='username'>@ {idea.User?.username || 'Unknown'}</div>
+                    <div className='username'>@ {idea.User?.username || localStorage.getItem('username')}</div>
                 
                 </div>
                 </div>
@@ -150,17 +153,6 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
 
 export default IdeaList;
 
-{/* <h1>All Ideas</h1>
-      {error ? (
-        <p style={{ color: 'red' }}>Error fetching ideas: {error.message}</p>
-      ) : (
-        ideas.map((idea) => (
-          <div key={idea.id} className="idea">
-            <h2>{idea.title}</h2>
-            <p>{idea.body}</p>
-            <small>By: {idea.User?.username || 'Unknown'}</small>
-          </div>
-        ))
-      )} */}
+
  
 

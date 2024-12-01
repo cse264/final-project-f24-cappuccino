@@ -93,4 +93,29 @@ router.delete('/:id', authenticate, async (req, res) => {
   }
 });
 
+
+// Get all posts by a specific username
+router.get('/user/:username', async (req, res) => {
+    try {
+      const { username } = req.params;
+  
+      // Find the user by username
+      const user = await User.findOne({ where: { username } });
+  
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      // Find all posts by the user's ID
+      const posts = await Post.findAll({
+        where: { user_id: user.id },
+      });
+  
+      res.json(posts);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  });
+  
+
 module.exports = router;

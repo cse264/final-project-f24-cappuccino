@@ -53,7 +53,7 @@ const CreatePost = () => {
             profileicon="images/img_icon-profile.svg"
         />
     
-        <div className="your-ideas-screen">
+        <div className="all-ideas-screen">
             <div className="login-header">
                 <h1>Create a New Post</h1>
             </div> 

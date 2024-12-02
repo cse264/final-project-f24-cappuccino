@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { Img, Text } from "components";
 import "./index.css";
 import { useNavigate } from "react-router-dom";
-// const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, decrementLikes, editIdea }) => {
 
 const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, decrementLikes, editIdea }) => {
 
@@ -12,57 +11,7 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
-//   const PostsList = () => {
-//     const [posts, setPosts] = useState([]);
-//     const [error, setError] = useState(null);
-  
-//     useEffect(() => {
-//       const fetchPosts = async () => {
-//         try {
-//           const response = await fetch('http://localhost:5001/posts', {
-//             headers: {
-//               Authorization: `Bearer ${localStorage.getItem('token')}`,
-//               'Content-Type': 'application/json',
-//             },
-//           });
-  
-//           if (!response.ok) {
-//             throw new Error('Failed to fetch posts');
-//           }
-  
-//           const data = await response.json();
-//           setPosts(data); // Assuming `data` is an array of posts
-//         } catch (error) {
-//           setError(error.message);
-//         }
-//       };
-  
-//       fetchPosts();
-//     }, []);
 
-//   const deletePost = async (postId) => {
-//     try {
-//       const response = await fetch(`http://localhost:5001/posts/${postId}`, {
-//         method: 'DELETE',
-//         headers: {
-//           Authorization: `Bearer ${localStorage.getItem('token')}`,
-//           'Content-Type': 'application/json',
-//         },
-//       });
-
-//       const data = await response.json();
-
-//       if (response.ok) {
-//         alert('Post deleted successfully!');
-//         setPosts((prevPosts) => prevPosts.filter((post) => post.id !== postId));
-//       } else {
-//         alert(data.message || 'Failed to delete post');
-//       }
-//     } catch (error) {
-//       console.error('Error deleting post:', error);
-//       alert('An error occurred. Please try again.');
-//     }
-//   };
 
   const handleAddIdeaClick = () => {
     navigate('/addidea'); // Navigate to the "Add Idea" page
@@ -173,9 +122,7 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
         <button onClick={handleAddIdeaClick}>Add Idea</button>
         </div> 
       </div>
-      <div className="ideas">
-          {/* {ideas?.map(renderIdea)} */}
-          
+      <div className="ideas">          
           
           {error ? (
             <p style={{ color: 'red' }}>Error fetching ideas: {error.message}</p>
@@ -189,7 +136,7 @@ const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, de
                         <h2>{idea.body}</h2>
                     </div>
                     </div>
-                    <div className='username'>@ {idea.User?.username || localStorage.getItem('username')}</div>
+                    <div className='username'>@{idea.User?.username || localStorage.getItem('username')}</div>
                 
                 </div>
                 </div>

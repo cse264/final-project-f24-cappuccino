@@ -192,34 +192,6 @@
 
 
 
-  
-/* .idea-preview:hover {
+.edit-button:hover, .delete-button:hover, .idea-preview:hover, .add-idea-button:hover{
 	box-shadow: 1px 3px 5px rgb(94, 55, 4);
-} */
-
-.edit-button:hover, .delete-button:hover, .idea-preview:hover {
-	box-shadow: 1px 3px 5px rgb(94, 55, 4);
-}
-
-
-/* .content {
-	max-width: 600px;
-	margin: 40px auto;
-	padding: 20px;
-  } */
-  
-
-  
-  /* .idea-preview h2 {
-	font-size: 20px;
-	color: #a1610c;
-	margin-bottom: 8px;
-  } */
-  
-  /* .idea-preview p2 {
-	font-size: 12px;
-	color: burlywood;
-	margin-bottom: 8px;
-  } */
-
-  
+} 

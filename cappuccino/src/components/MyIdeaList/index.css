@@ -99,7 +99,6 @@
     flex-direction: column; /* Use row or column as needed */
     justify-content: flex-end; /* Align items to the bottom for vertical layout */
     height: 100%;
-    border: 1px solid #ccc; /* Visualize the container */
 }
 
 .username{
@@ -191,48 +190,23 @@
 }
 
 .save-button{
-	display: flex;
+    display: flex;
+    width: 100%;
+
 	border-radius: 10px;
-	background: #6A492A;
-	font-family: Inter;
-	font-size: 25px;
-	font-style: normal;
-	text-align: center;
-	color: #FFF;
-	margin-left: auto;
 	padding: 10px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+   
 }
 
 
-
-  
-/* .idea-preview:hover {
-	box-shadow: 1px 3px 5px rgb(94, 55, 4);
-} */
-
-.edit-button:hover, .delete-button:hover, .idea-preview:hover {
+.edit-button:hover, .delete-button:hover, .idea-preview:hover, .save-button:hover {
 	box-shadow: 1px 3px 5px rgb(94, 55, 4);
 }
 
 
-/* .content {
-	max-width: 600px;
-	margin: 40px auto;
-	padding: 20px;
-  } */
-  
-
-  
-  /* .idea-preview h2 {
-	font-size: 20px;
-	color: #a1610c;
-	margin-bottom: 8px;
-  } */
-  
-  /* .idea-preview p2 {
-	font-size: 12px;
-	color: burlywood;
-	margin-bottom: 8px;
-  } */
-
-  
+.edit-form{
+    display: flex;
+}

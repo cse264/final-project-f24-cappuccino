@@ -5,10 +5,10 @@ import Navbar from "components/Navbar";
 
 const AuthForm = () => {
     const navigate = useNavigate();
-  const [isSignup, setIsSignup] = useState(false); // Toggle between signup and login
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
+    const [isSignup, setIsSignup] = useState(false); // Toggle between signup and login
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();

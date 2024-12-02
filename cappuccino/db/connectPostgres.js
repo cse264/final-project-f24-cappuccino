@@ -3,7 +3,7 @@ const { Client } = pg
  
 const client = new Client({
   host: peanut.db.elephantsql.com,
-  port: 5432,
+  port: 5001,
   database: sfctizgx,
   user: sfctizgx,
   password: oPSR69xCjlCIOqykl_HiH8rRtdw2h_wU,

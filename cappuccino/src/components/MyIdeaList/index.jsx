@@ -1,23 +1,70 @@
-import React, { useState, useRef } from 'react';
-import { Img, Text } from "components";
-import "./index.css";
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-// const IdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, decrementLikes, editIdea }) => {
-
-const MyIdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, decrementLikes, editIdea }) => {
+import "./index.css";
 
 
-  const [editedTitle, setEditedTitle] = useState('');
-  const [editMode, setEditMode] = useState(null);
-  const navigate = useNavigate();
-  const [error, setError] = useState(null);
+const MyIdeaList = ({ title }) => {
+    const [ideas, setIdeas] = useState([]);
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
+    // Retrieve the username from localStorage
+    const storedUsername = localStorage.getItem('username');
 
-  const handleAddIdeaClick = () => {
-    navigate('/addidea'); // Navigate to the "Add Idea" page
-  };
-
-
+    // Navigate to Add Idea page
+    const handleAddIdeaClick = () => {
+        navigate('/addidea');
+    };
+  
+    // Fetch posts from the backend
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch(`http://localhost:5001/posts/user/${storedUsername}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        if (!response.ok) {
+          throw new Error('Failed to fetch posts');
+        }
+  
+        const data = await response.json();
+        setIdeas(data); // Update state with the fetched posts
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+  
+    useEffect(() => {
+      fetchPosts(); // Initial fetch when component mounts
+    }, []);
+  
+    // Delete a post
+    const deletePost = async (postId) => {
+      try {
+        const response = await fetch(`http://localhost:5001/posts/${postId}`, {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          alert('Post deleted successfully!');
+          fetchPosts(); // Refresh posts after successful deletion
+        } else {
+          alert(data.message || 'Failed to delete post');
+        }
+      } catch (error) {
+        console.error('Error deleting post:', error);
+        alert('An error occurred while deleting the post.');
+      }
+    };
 
 
   return (
@@ -53,11 +100,10 @@ const MyIdeaList = ({ ideas, title, handleDelete, handleSubmit, incrementLikes, 
                         <div className="edit-button"> 
                             <button>Edit</button>
                         </div>
-                        <div className="edit-button"> 
-                            <button>Delete</button>
+                        <div className="edit-button">
+                            <button onClick={() => { deletePost(idea.id) }}> Delete</button>
                         </div>
                     </div> 
-                    {/* <button onClick={() => deletePost(post.id)}>Delete</button> */}
                     </div>
                 
                 </div>

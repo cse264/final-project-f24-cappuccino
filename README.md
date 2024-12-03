@@ -18,7 +18,7 @@
 Build your team and write a document describing your application to me by Monday Oct 28, 2024. Email this document to me and the TA for this course (Xinhui Chen xic721@lehigh.edu)  I will approve your web application idea. In your paper, include:
 * the name of your application
 * Name and roles of all your team members
-* its functionality (how does it meet each of the requirements listed above - list each requirement along with your will fulfill it)
+* its functionality (how does it meet each of the requirements listed above - list each requirement along with how you will fulfill it)
 * user story/use case (what happens when a user visits your application, what can they do, etc)
 * technical design (what is your tech stack)
 

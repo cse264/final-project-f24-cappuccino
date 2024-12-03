@@ -5,6 +5,8 @@ const authenticate = require('../middleware/authenticate');
 const Post = require('../models/Post');
 const User = require('../models/User');
 
+
+
 // Create a new post
 router.post('/', authenticate, async (req, res) => {
   try {
@@ -23,6 +25,7 @@ router.post('/', authenticate, async (req, res) => {
   }
 });
 
+
 // Get all posts
 router.get('/', async (req, res) => {
   try {
@@ -34,6 +37,7 @@ router.get('/', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 
 // Get a specific post
 router.get('/:id', async (req, res) => {
@@ -50,6 +54,7 @@ router.get('/:id', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
 
 // Update a post
 router.put('/:id', authenticate, async (req, res) => {
@@ -73,7 +78,8 @@ router.put('/:id', authenticate, async (req, res) => {
   }
 });
 
-// Delete a post
+
+// Delete your post
 router.delete('/:id', authenticate, async (req, res) => {
   try {
     const post = await Post.findByPk(req.params.id);
@@ -82,9 +88,10 @@ router.delete('/:id', authenticate, async (req, res) => {
       return res.status(404).json({ message: 'Post not found' });
     }
 
-    if (post.user_id !== req.userId) {
-      return res.status(403).json({ message: 'Unauthorized' });
-    }
+    // front end manages this so that admin can delete any post
+    // if (post.user_id !== req.userId) {
+    //   return res.status(403).json({ message: 'Unauthorized' });
+    // }
 
     await post.destroy();
     res.json({ message: 'Post deleted!' });

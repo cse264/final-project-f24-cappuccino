@@ -142,9 +142,15 @@
 }
 
 
-.edit-button, .delete-button{
+.edit-button {
 	border-radius: 10px;
 	background: #979797;
+	padding: 10px;
+}
+
+.admin-button{
+	border-radius: 10px;
+	background: #D9D9D9;
 	padding: 10px;
 }
 
@@ -192,6 +198,6 @@
 
 
 
-.edit-button:hover, .delete-button:hover, .idea-preview:hover, .add-idea-button:hover{
+.edit-button:hover, .idea-preview:hover, .add-idea-button:hover{
 	box-shadow: 1px 3px 5px rgb(94, 55, 4);
 } 

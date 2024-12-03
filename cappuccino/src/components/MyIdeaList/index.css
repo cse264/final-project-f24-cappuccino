@@ -154,11 +154,13 @@
 }
 
 
-.edit-button, .delete-button{
+.edit-button {
 	border-radius: 10px;
 	background: #979797;
 	padding: 10px;
 }
+
+
 
 
 .likes{

@@ -32,6 +32,8 @@ Cappuccino is a social media app that allows users to share their ideas on a col
 
 * <b>Library or framework not discussed in class:</b>
     * <i>Tailwind CSS</i>
+    * <i>Styled-Components</i>
+    * <i>JWT Decode</i>
     * <i>JavaScript XML (JSX)</i>: syntax extension for JavaScript used in React
     * <i>Figma</i>: used for prototyping and UI/UX design
 
@@ -70,7 +72,51 @@ Each user can create multiple posts (one user → many posts).
 
 ### Backend:
 
+For full deatils, see: [structure.md](backend/structure.md)
+
+<b>Routes:</b>
+
+* <u>auth.js file</u>
+    * <b>POST /auth/signup</b> - Register a new user
+    * <b>POST /auth/login</b> - Log in an existing user and generate a token
+
+* <u>posts.js file</u>
+
+    * <b>POST /posts/</b> - Create a new post
+    * <b>GET /posts/</b> - Get all posts
+    * <b>GET /posts/:id</b> - Get a specific post by ID
+    * <b>PUT /posts/:id</b> - Update a specific post by ID
+    * <b>DELETE /posts/:id</b> - Delete a specific post by ID
+    * <b>GET /posts/user/:username</b> - Get all posts by a specific username
+
 ### Front End:
+
+* <u>Framework</u>
+    * <b>React:</b> The frontend of the application is built using React, a popular JavaScript library for building dynamic and responsive user interfaces.
+* <u>Styling</u>
+    * <b>Tailwind CSS:</b> Used for styling the application with a utility-first CSS framework, enabling rapid development of responsive designs.
+    * <b>Styled-Components:</b> Employed for scoped CSS-in-JS styling, ensuring modular and maintainable styles for React components.
+
+* <u>Prototyping</u>
+    * <b>Figma:</b>The user interface was designed and prototyped in Figma to visualize the app's layout and user experience before development.
+
+* <u>Routing</u>
+    * <b>React Router:</b> Implemented for navigating between pages like login, idea boards, and user profiles seamlessly.
+
+* <b>API Integration:</b>
+Integrated with the backend using RESTful APIs to manage authentication, user ideas, and the weather forecast feature.
+
+
+* <b>pages/</b>
+    * AboutUs/
+    * AddIdea/
+    * AllIdeas/
+    * LogIn/
+    * Profile/
+    * Weather/
+    * YourIdeas/
+    * NotFound.jsx
+
 
 ### Weather API:
 

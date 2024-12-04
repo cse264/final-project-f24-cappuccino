@@ -83,9 +83,9 @@ CREATE TABLE posts (
 
 ```
 CREATE TABLE users (
-  id SERIAL PRIMARY KEY,                    -- Auto-incrementing ID
-  username VARCHAR(255) UNIQUE NOT NULL,    -- Username should be unique
-  password VARCHAR(255) NOT NULL            -- Password is required
+  id SERIAL PRIMARY KEY,                        -- Auto-incrementing ID
+  username VARCHAR(255) UNIQUE NOT NULL,        -- Username should be unique
+  password VARCHAR(255) NOT NULL                -- Password is required
 );
 ```
 

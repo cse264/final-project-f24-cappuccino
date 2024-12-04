@@ -111,7 +111,7 @@ Each user can create multiple posts (one user → many posts).
 
 ### Backend:
 
-For full deatils, see: [structure.md](backend/structure.md)
+For full details, see: [structure.md](backend/structure.md)
 
 <b>Routes:</b>
 

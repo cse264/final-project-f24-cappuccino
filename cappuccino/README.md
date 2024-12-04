@@ -21,6 +21,32 @@
 ## Description
 Cappuccino is a social media app that allows users to share their ideas on a collaborative message board. Regular users can view posts from others, as well as create, edit, and delete their own posts. Admin users have additional privileges, including the ability to delete any user's posts. Additionally, all users can access the weekly weather forecast for their local area, making Cappuccino a platform that combines creativity and practical information.
 
+## User Story
+
+- A user opens the app and lands on the login screen:
+  - A new user can sign up with a unique username and password.
+  - An existing user can log in using their username and password.
+
+- After logging in, the user is directed to the **"All Ideas"** board, where they can scroll through and view all previously posted ideas.
+
+- Users can post an idea by clicking the **"Add Idea"** button, allowing them to submit an idea with a title and a message.
+
+- **Permissions**:
+  - **Normal Users**: Can view, create, edit, and delete their own posts.
+  - **Admin Users**: Have extended privileges, including the ability to delete any user's posts.
+
+- The navigation bar at the top of the page allows users to:
+  - **Weather Icon**: View the local weather.
+  - **Heart Icon**: View all ideas they’ve posted under **"Your Ideas"**.
+  - **Home Icon**: Navigate back to the **"All Ideas"** board to see posts from all users.
+  - **Profile Icon**: View their profile, which includes their:
+    - Username
+    - User status (Admin or Normal User)
+    - A sign-out button
+  - **Cappuccino Logo (Easter Egg)**: Access the **"About Us"** page to meet the team behind Cappuccino.
+
+
+
 ## Functionality
 * <b>User Accounts:</b>
     * <i>Normal User:</i> can view posts, create posts, and delete or edit only their own posts
@@ -126,6 +152,43 @@ The app uses three key states (weather, error, and loading) to provide a respons
 
 
 ## Install & Run
+
+* open a new terminal
+* git clone <https://github.com/cse264/final-project-f24-cappuccino.git>
+* cd final-project-f24-cappuccino/cappuccino
+
+* <b>Start Backend</b>
+    * open a new terminal
+    * cd final-project-f24-cappuccino/cappuccino/backend
+    * npm install cors
+    * touch .env in the root of the backend/
+        ```
+        DB_NAME=sfctizgx
+        DB_USER=sfctizgx
+        DB_PASS=oPSR69xCjlCIOqykl_HiH8rRtdw2h_wU
+        DB_HOST=peanut.db.elephantsql.com
+        DB_PORT=5432
+        PORT=5001
+        JWT_SECRET=TeamCappuccino22
+        ```
+    * save file
+    * node server.js
+    * should see message that says:
+        * Server is running on port 5001
+        * Database synced successfully.
+    * open http://localhost:5001/ in a browser
+        * should see message: Welcome to the Social Media API!
+
+* <b>Start Front End</b>
+    * open http://localhost:3000/ in a browser
+    * open a new terminal
+    * cd final-project-f24-cappuccino/cappuccino
+    * npm install react
+    * npm start
+    * Should see message that says:
+        * cappuccino@0.1.0 start
+        * react-scripts start
+
 
 
 ## Deliverables

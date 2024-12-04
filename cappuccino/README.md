@@ -194,5 +194,5 @@ The app uses three key states (weather, error, and loading) to provide a respons
 ## Deliverables
 * <b>Proposal:</b> Due Monday Oct 28, 2024 (email from @jol225 on 10/18/24)
 * <b>Presentation:</b> Class on Monday Dec 2, 2024
-* <b>Demo:</b> Cappuccino Demo Link
+* <b>Demo:</b> [Cappuccino Demo Link](https://drive.google.com/file/d/1Y0gLsfPQ9moW96k4cVd4GVHSbdgrrmYj/view?usp=sharing)
 * <b>Code: </b> Due Wednesday Dec 3, 2024

@@ -68,14 +68,27 @@ Cappuccino is a social media app that allows users to share their ideas on a col
 
 ## Technical Stack
 ### Database:
-Elephant SQL
-* DB_NAME=sfctizgx
-* DB_USER=sfctizgx
-* DB_PASS=oPSR69xCjlCIOqykl_HiH8rRtdw2h_wU
-* DB_HOST=peanut.db.elephantsql.com
-* DB_PORT=5432
-* PORT=5001
-* JWT_SECRET=TeamCappuccino22
+Elephant SQL Queries:
+
+```
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY                         -- Auto-incrementing ID for each post
+    title VARCHAR(255) NOT NULL,                  -- Title of the post
+    body TEXT NOT NULL,                           -- Body/content of the post
+    user_id INT NOT NULL,                         -- ID of the user who created the post
+    likes INT DEFAULT 0,                          -- Number of likes for the post, default is 0
+    FOREIGN KEY (user_id) REFERENCES users(id)    -- Foreign key linking to the users table
+);
+```
+
+```
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,                    -- Auto-incrementing ID
+  username VARCHAR(255) UNIQUE NOT NULL,    -- Username should be unique
+  password VARCHAR(255) NOT NULL            -- Password is required
+);
+```
+
 
 <b>Tables</b>
 * <u>Users Table:</u>
@@ -161,7 +174,7 @@ The app uses three key states (weather, error, and loading) to provide a respons
     * open a new terminal
     * cd final-project-f24-cappuccino/cappuccino/backend
     * npm install cors
-    * touch .env in the root of the backend/
+    * touch .env in the root of the backend/ (replace touch with New-Item for windows)
         ```
         DB_NAME=sfctizgx
         DB_USER=sfctizgx
